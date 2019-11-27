@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_theme_change/provider/app_provider.dart';
+import 'package:provider/provider.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -29,17 +31,49 @@ class HomePage extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(top: 16),
             child: Card(
+              color: Theme.of(context).colorScheme.primary,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
               ),
               elevation: 4,
               margin: EdgeInsets.symmetric(horizontal: 20),
               child: ListTile(
-                leading: Icon(Icons.call, color: Theme.of(context).iconTheme.color,),
-                title: Text("Conference call", style: Theme.of(context).textTheme.body1,),
-                subtitle: Text("30 mins", style: Theme.of(context).textTheme.body2,),
-                trailing: Icon(Icons.check_circle, color: Theme.of(context).colorScheme.secondary,),
+                leading: Icon(
+                  Icons.call,
+                  color: Theme.of(context).iconTheme.color,
+                ),
+                title: Text(
+                  "Conference call",
+                  style: Theme.of(context).textTheme.body1,
+                ),
+                subtitle: Text(
+                  "30 mins",
+                  style: Theme.of(context).textTheme.body2,
+                ),
+                trailing: Icon(
+                  Icons.check_circle,
+                  color: Theme.of(context).colorScheme.secondary,
+                ),
               ),
+            ),
+          ),
+          Spacer(),
+          Padding(
+            padding: EdgeInsets.all(16),
+            child: Row(
+              children: <Widget>[
+                Text(
+                  "Dark Mode",
+                  style: Theme.of(context).textTheme.body2,
+                ),
+                Spacer(),
+                Switch(
+                  value: Provider.of<AppProvider>(context).isDarkModeOn,
+                  onChanged: (booleanValue){
+                    Provider.of<AppProvider>(context).updateTheme(booleanValue);
+                  },
+                )
+              ],
             ),
           )
         ],
