@@ -41,7 +41,7 @@ class AppTheme {
 
   //-------dark-------
   static Color _darkPrimaryColor = Colors.white24;
-  static Color _darkPrimaryVariantColor = Colors.black;
+  static Color _darkPrimaryVariantColor = Colors.grey[850];
   static Color _darkSecondaryColor = Colors.white;
   static Color _darkOnPrimaryColor = Colors.white;
 

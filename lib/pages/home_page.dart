@@ -39,15 +39,15 @@ class HomePage extends StatelessWidget {
               margin: EdgeInsets.symmetric(horizontal: 20),
               child: ListTile(
                 leading: Icon(
-                  Icons.call,
+                  Icons.live_tv,
                   color: Theme.of(context).iconTheme.color,
                 ),
                 title: Text(
-                  "Conference call",
+                  "Watch Naruto",
                   style: Theme.of(context).textTheme.body1,
                 ),
                 subtitle: Text(
-                  "30 mins",
+                  "10 mins",
                   style: Theme.of(context).textTheme.body2,
                 ),
                 trailing: Icon(
